@@ -22,7 +22,7 @@ export const dialogStyles: IStyleFunctionOrObject<IDialogStyleProps, IDialogStyl
     root:{
         ":hover": {
             cursor: "default"
-        }
+        },
     }
 }
 

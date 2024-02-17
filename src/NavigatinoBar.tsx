@@ -7,6 +7,7 @@ import {
 } from "@fluentui/react"
 import { DefaultButtonStyles, pivotStyle, showNavBarStyle } from "./NavigationBarStyles";
 import { Loading } from "./Loading";
+import { pages } from "./NavigationBarPages";
 
 export const NavigationBar: React.FC = () => {
     const navigate = useNavigate();
@@ -18,8 +19,8 @@ export const NavigationBar: React.FC = () => {
     const onNavigate = (link ?: PivotItem) => {
         if (link !== null) {
             setIsLoading(true)
+            navigate(`/${link?.props.headerText}`, { replace: true })
             setTimeout(() =>  {
-                navigate(`/${link?.props.headerText}`, { replace: true })
                 setIsLoading(false)
             }, 3000);
             setIsClicked(false)
@@ -36,12 +37,12 @@ export const NavigationBar: React.FC = () => {
                 onLinkClick={ (link) => onNavigate(link) } 
                 styles={isClicked ? showNavBarStyle : pivotStyle} 
             >
-                <PivotItem headerText="HaushaltRechner" itemKey="HaushaltRechner" />
-                <PivotItem headerText="Login" itemKey="Login" />
-                <PivotItem headerText="MovieApp" itemKey="MovieApp" />
-                <PivotItem headerText="TicTacToe" itemKey="TicTacToe" />
-                <PivotItem headerText="Twitter" itemKey="Twitter" />
-                <PivotItem headerText="VokabelTrainer" itemKey="VokabelTrainer" />
+                <PivotItem headerText="HaushaltRechner" itemKey={`${pages.HaushaltRechner}`} />
+                <PivotItem headerText="Login" itemKey={`${pages.Login}`} />
+                <PivotItem headerText="MovieApp" itemKey={`${pages.MovieApp}`} />
+                <PivotItem headerText="TicTacToe" itemKey={`${pages.TicTacToe}`} />
+                <PivotItem headerText="Twitter" itemKey={`${pages.Twitter}`} />
+                <PivotItem headerText="VokabelTrainer" itemKey={`${pages.VokabelTrainer}`} />
             </Pivot>
 
             <DefaultButton 

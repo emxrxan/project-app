@@ -1,5 +1,5 @@
-import React from 'react';
-import { Route, Routes, Navigate, NavLink } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Route, Routes, Navigate, NavLink, useLocation } from 'react-router-dom';
 import { NavigationBar } from './NavigatinoBar';
 import { HaushaltRechner } from './pages/HaushaltRechner/HaushaltRechner';
 import { Login } from './pages/Login/Login';
@@ -10,12 +10,26 @@ import { VokabelTrainer } from './pages/VokabelTrainer/VokabelTrainer';
 import { Stack, StackItem } from '@fluentui/react';
 import { Home } from './pages/Home/Home';
 import { StackItemContentStyle, StackStyle, linkStyle, stacklinkStyle } from './AppStyle';
+import { NotFound } from './pages/NotFound/NotFound';
+import { pagesList } from './NavigationBarPages';
 
 function App() {
+  const [pageFound, setPageFound] = useState<boolean>(true)
+  const location = useLocation()
+  const currentPath = location.pathname
+
+  useEffect(() => {
+    const found = pagesList.find((page) => page === currentPath.replace("/",""))
+    if(!found){
+      setPageFound(false)
+    } else {
+      setPageFound(true)
+    }
+  }, [currentPath])
   return (
     <Stack {...StackStyle} >
       <StackItem>
-        <Home />
+        {pageFound && <Home />}
       </StackItem>
       <StackItem>
         <NavigationBar />
@@ -29,6 +43,7 @@ function App() {
           <Route path='/TicTacToe' Component={TicTacToe} />
           <Route path='/Twitter' Component={Twitter} />
           <Route path='/VokabelTrainer' Component={VokabelTrainer} />
+          <Route path='*' Component={NotFound} />
         </Routes>
       </StackItem>
       <StackItem {...stacklinkStyle}>
