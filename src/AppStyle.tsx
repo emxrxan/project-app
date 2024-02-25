@@ -1,6 +1,7 @@
 import { IStackItemProps, IStackProps, mergeStyles } from "@fluentui/react";
 import { ViewPortWidth, mediaQueryForm } from "./MediaQuery";
 import React from "react";
+import { appTheme } from "./AppTheme/appTheme";
 
 export const StackStyle: IStackProps = {
     style: {
@@ -14,7 +15,7 @@ export const StackItemContentStyle:IStackItemProps = {
             root:{
             margin: "2rem 1rem",
             marginBottom: "0",
-            border: "2px solid #ccc",
+            border: `2px solid ${appTheme.LIGHT_GREY}`,
             height: "100%",
             borderRadius: "0.3rem",
             [mediaQueryForm(ViewPortWidth.$768)]: {
@@ -26,7 +27,7 @@ export const StackItemContentStyle:IStackItemProps = {
 }
 
 export const linkStyle = mergeStyles({
-    color: "#0078D4",
+    color: appTheme.LIGHT_BLUE,
     fontWeight: "bold"
 })
 

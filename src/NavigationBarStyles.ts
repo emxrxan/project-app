@@ -5,10 +5,11 @@ import {
     IButtonStyles,
 } from "@fluentui/react"
 import { mediaQueryForm, ViewPortWidth } from "./MediaQuery";
+import { appTheme } from "./AppTheme/appTheme";
 
 export const pivotStyle: IStyleFunctionOrObject<IPivotStyleProps, IPivotStyles> = {
     root: {
-        backgroundColor: "#cccccc",
+        backgroundColor: `${appTheme.LIGHT_GREY}`,
         display: "flex",
         justifyContent: "space-around",
         paddingTop: "0.2rem",
@@ -36,7 +37,7 @@ export const pivotStyle: IStyleFunctionOrObject<IPivotStyleProps, IPivotStyles> 
 
 export const showNavBarStyle: IStyleFunctionOrObject<IPivotStyleProps, IPivotStyles> = {
     root: {
-        backgroundColor: "#cccccc",
+        backgroundColor: `${appTheme.LIGHT_GREY}`,
         display: "flex",
         justifyContent: "space-around",
         paddingTop: "0.2rem",

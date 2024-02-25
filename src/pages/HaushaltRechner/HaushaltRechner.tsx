@@ -1,7 +1,8 @@
 import React from "react";
-import { Provider, useDispatch, useSelector } from "react-redux";
-import { testDataAction } from "./Store/Test";
-import Store, { StoreType } from "./Store/Store";
+import { Provider } from "react-redux";
+import Store from "./Store/Store";
+import { Stack, StackItem } from "@fluentui/react";
+import { GesamtBilanz } from "./Component/GesamtBilanz/GesamtBilanz.1";
 
 export const HaushaltRechner: React.FC = () => {
     return <Provider store={Store}>
@@ -11,9 +12,13 @@ export const HaushaltRechner: React.FC = () => {
 
 export const HaushaltRechnerApp: React.FC = () => {
 
-    const dispatch = useDispatch()
-    const state = useSelector((state: StoreType) => state.test.counter)
-    return <>
-        HAUSHALT
-    </>
+    return <Stack>
+        <StackItem>
+            <GesamtBilanz />
+        </StackItem>
+        <StackItem>
+            Liste
+            Add
+        </StackItem>
+    </Stack>
 }
