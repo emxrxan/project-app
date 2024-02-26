@@ -1,4 +1,11 @@
-import { ISeparatorStyleProps, ISeparatorStyles, IStackItemProps, IStyleFunctionOrObject, ITextProps, mergeStyles } from "@fluentui/react"
+import { 
+    ISeparatorStyleProps, 
+    ISeparatorStyles, 
+    IStackItemProps, 
+    IStyleFunctionOrObject, 
+    ITextProps, 
+    mergeStyles 
+} from "@fluentui/react"
 import { appTheme } from "../../../../AppTheme/appTheme"
 
 export const gesamtStyle: IStackItemProps = {
