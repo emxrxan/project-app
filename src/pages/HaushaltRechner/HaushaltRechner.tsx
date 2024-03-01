@@ -3,6 +3,7 @@ import { Provider } from "react-redux";
 import Store from "./Store/Store";
 import { Stack, StackItem } from "@fluentui/react";
 import { GesamtBilanz } from "./Component/GesamtBilanz/GesamtBilanz.1";
+import { ListItem } from "./Component/ListItem/ListItem";
 
 export const HaushaltRechner: React.FC = () => {
     return <Provider store={Store}>
@@ -17,8 +18,7 @@ export const HaushaltRechnerApp: React.FC = () => {
             <GesamtBilanz />
         </StackItem>
         <StackItem>
-            Liste
-            Add
+            <ListItem />
         </StackItem>
     </Stack>
 }
