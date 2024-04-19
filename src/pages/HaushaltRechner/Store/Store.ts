@@ -1,9 +1,9 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
-import { testDataReducer } from './Test'
+import { dataReducer } from './HaushaltReducer';
 
 const Store = configureStore({
     reducer: combineReducers({
-        test: testDataReducer
+        test: dataReducer
     })
 })
 
