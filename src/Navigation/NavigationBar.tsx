@@ -1,6 +1,7 @@
-import { Stack, CommandBar, Toggle, Icon } from "@fluentui/react";
+import { Stack, CommandBar } from "@fluentui/react";
 import { useNavigate } from "react-router-dom";
 import React from "react";
+import { navigationContainerStyles } from "./NavigationBar.styles";
 
 export const NavigationBar: React.FC = () => {
     const navigateTo = useNavigate()
@@ -24,34 +25,33 @@ export const NavigationBar: React.FC = () => {
                 {
                     key: 'Login',
                     name: 'Login',
-                    onClick: () => {NavigateTo('Login')}, 
+                    onClick: () => {NavigateTo('/Login')}, 
                 },
                 {
                     key: 'MovieApp',
                     name: 'Movie-App',
-                    onClick: () => {NavigateTo('MovieApp')}, 
+                    onClick: () => {NavigateTo('/MovieApp')}, 
                 },
                 {
                     key: 'TicTacToe',
                     name: 'Tic-Tac-Toe',
-                    onClick: () => {NavigateTo('TicTacToe')}, 
+                    onClick: () => {NavigateTo('/TicTacToe')}, 
                 },
                 {
                     key: 'Twitter',
                     name: 'Twitter',
-                    onClick: () => {NavigateTo('Twitter')}, 
+                    onClick: () => {NavigateTo('/Twitter')}, 
                 },
                 {
                     key: 'Vokabeltrainer',
                     name: 'Vokabeltrainer',
-                    onClick: () => {NavigateTo('Vokabeltrainer')}, 
+                    onClick: () => {NavigateTo('/Vokabeltrainer')}, 
                 }
             ]
         }
     }]
 
-    return <Stack.Item>
+    return <Stack.Item styles={navigationContainerStyles}>
         <CommandBar items={AllPages} />
-        <Toggle defaultChecked={false} />
     </Stack.Item>
 }
