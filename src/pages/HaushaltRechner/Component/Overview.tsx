@@ -1,6 +1,7 @@
 import { Stack } from "@fluentui/react";
 import React from "react";
 import { Donut } from "./Donut";
+import { Details } from "./DetailsList";
 
 export const Overview: React.FC = () => {
     return <Stack>
@@ -8,7 +9,7 @@ export const Overview: React.FC = () => {
             <Donut />
         </Stack.Item>
         <Stack.Item>
-            Tabelle
+            <Details />
         </Stack.Item>
     </Stack>
 }

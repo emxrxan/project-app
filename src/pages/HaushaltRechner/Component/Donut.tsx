@@ -5,8 +5,8 @@ export const Donut: React.FC = () => {
 
     const dataChart: IChartProps = {
         chartData: [
-            { legend: 'Einnahme', data: 2000, color: getColorFromToken(DataVizPalette.color1), xAxisCalloutData: 'Einnahme' },
-            { legend: 'Ausagbe', data: 20000, color: getColorFromToken(DataVizPalette.color2), xAxisCalloutData: 'Ausgabe' },
+            { legend: 'Einnahme', data: 2000, color: getColorFromToken(DataVizPalette.color1), xAxisCalloutData: 'Einnahme', yAxisCalloutData: '2000 €' },
+            { legend: 'Ausagbe', data: 2000, color: getColorFromToken(DataVizPalette.color2), xAxisCalloutData: 'Ausgabe', yAxisCalloutData: '2000 €' },
         ],
     };
 
