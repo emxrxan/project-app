@@ -11,21 +11,27 @@ export const FilterDataMenu: React.FC = () => {
                         key: 'Year2024',
                         subMenuProps: {
                         items: [
-                            { key: 'Januar', text: 'Januar' },
-                            { key: 'Febuar', text: 'Febuar'}
+                            { key: 'Januar', text: 'Januar', data: 'Januar2024'},
+                            { key: 'Febuar', text: 'Febuar', data: 'Febuar2024'}
                         ],
+                        onItemClick: (ev, item) => {console.log(':', item?.data)}
                         },
                         text: '2024',
+                        split: true,
+                        onClick: (ev, item) => {console.log(':',ev, item?.text)}
                     },
                     {
                         key: 'Year2023',
                         subMenuProps: {
                         items: [
-                            { key: 'Januar', text: 'Januar' },
-                            { key: 'Febuar', text: 'Febuar'}
+                            { key: 'Januar', text: 'Januar', data: 'Januar2023'},
+                            { key: 'Febuar', text: 'Febuar', data: 'Febuar2023'}
                         ],
+                        onItemClick: (ev, item) => {console.log('item:',ev, item?.data)}
                         },
                         text: '2023',
+                        split: true,
+                        onClick: (ev, item) => {console.log(':',ev, item?.text)}
                     },
             ]}} />
     </Stack>
