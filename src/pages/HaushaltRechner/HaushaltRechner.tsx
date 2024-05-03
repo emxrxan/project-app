@@ -1,6 +1,7 @@
 import { Pivot, PivotItem, Stack } from "@fluentui/react";
 import React from "react";
 import { Overview } from "./Component/Overview";
+import { FormField } from "./Component/FormField";
 
 export const HaushaltRechner: React.FC = () => {
     return <Stack.Item tokens={{ padding: '0.5rem 1rem' }}>
@@ -9,7 +10,7 @@ export const HaushaltRechner: React.FC = () => {
                 <Overview />
             </PivotItem>
             <PivotItem headerText="Neu" itemIcon="add">
-                Neuer Eintrag
+                <FormField />
             </PivotItem>
         </Pivot>
     </Stack.Item>
